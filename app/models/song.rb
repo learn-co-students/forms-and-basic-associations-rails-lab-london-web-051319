@@ -14,13 +14,13 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(inp)
-    artist = Artist.find_or_create_by(name: inp)
-    self.artist = artist
+    @artist = Artist.find_or_create_by(name: inp)
+    self.artist = @artist
   end
 
   def artist_name
     self.artist.name
-    # binding.pry
+    #binding.pry
   end
 
   def note_contents=(notes)
