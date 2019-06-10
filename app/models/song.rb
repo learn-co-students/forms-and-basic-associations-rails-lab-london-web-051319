@@ -15,8 +15,7 @@ class Song < ActiveRecord::Base
 
   def artist_name=(inp)
     artist = Artist.find_or_create_by(name: inp)
-    artist.songs.build(name: self.name)
-    binding.pry
+    self.artist = artist
   end
 
   def artist_name
